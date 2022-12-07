@@ -29,7 +29,7 @@ strs[i] consists of only lowercase English letters.
  var longestCommonPrefix = function(strs) {
   let firstLett = "";
   for ( var i = 0; i < strs.length; i++ ) {
-    let firstChar = strs[i].substring(0, 1);
+    let firstChar = strs[i][0];
       if ( firstLett === "" ) {
           firstLett = firstChar;
       } else if ( firstChar !== firstLett ) {
