@@ -32,19 +32,14 @@ s consists of parentheses only '()[]{}'.
  * @return {boolean}
  */
  var isValid = function(s) {
-  for (var i = 0; i < s.length; i++) {
-    if (s[i] === "(") {
-        if (s[i + 1] !== ")") {
-            return false
-        }
-    } else if (s[i] === "{") {
-        if (s[i + 1] !== "}") {
-            return false
-        }
-    } else if (s[i] === "]") {
-        if (s[i + 1] !== "]") {
-            return false
-        }
-    }
-    return true
+  while (
+    s.indexOf("{}") !== -1 ||
+    s.indexOf("[]") !== -1 ||
+    s.indexOf("()") !== -1
+  ) {
+    s = s.replace("()", "");
+    s = s.replace("{}", "");
+    s = s.replace("[]", "");
+  }
+  return s === "";
 };
