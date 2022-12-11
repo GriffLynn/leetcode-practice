@@ -36,6 +36,7 @@ strs[i] consists of only lowercase English letters.
           return "";
       }
   }
+
   const newStrs = strs.map( ele => ele.substring( 1 ) );
   return firstLett + longestCommonPrefix( newStrs );
 };
